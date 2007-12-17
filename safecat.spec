@@ -12,7 +12,6 @@ Source0:	http://jeenyus.net/~budney/linux/software/safecat/%{name}-%{version}.ta
 Source1:	README.MDK
 BuildRequires:	dietlibc-devel >= 0.20
 BuildRequires:  groff-for-man
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 safecat is an implementation of D. J. Bernstein's maildir algorithm. It can be
