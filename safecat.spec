@@ -4,7 +4,7 @@
 Summary:	Secure File Wiping and Deletion
 Name:		safecat
 Version:	1.13
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	BSD
 Group:		File tools
 URL:		http://jeenyus.net/~budney/linux/software/safecat.html
@@ -12,7 +12,7 @@ Source0:	http://jeenyus.net/~budney/linux/software/safecat/%{name}-%{version}.ta
 Source1:	README.MDK
 BuildRequires:	dietlibc-devel >= 0.20
 BuildRequires:  groff-for-man
-Buildroot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 safecat is an implementation of D. J. Bernstein's maildir algorithm. It can be
@@ -41,7 +41,7 @@ echo "%{_prefix}" > conf-root
 make
 
 %install
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{_mandir}/man1
@@ -52,7 +52,7 @@ install -m0644 safecat.1 %{buildroot}%{_mandir}/man1/
 install -m0644 maildir.1 %{buildroot}%{_mandir}/man1/
 
 %clean
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
@@ -61,5 +61,3 @@ install -m0644 maildir.1 %{buildroot}%{_mandir}/man1/
 %{_bindir}/maildir
 %{_mandir}/man1/safecat.1*
 %{_mandir}/man1/maildir.1*
-
-
