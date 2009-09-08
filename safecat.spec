@@ -4,7 +4,7 @@
 Summary:	Secure File Wiping and Deletion
 Name:		safecat
 Version:	1.13
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		File tools
 URL:		http://jeenyus.net/~budney/linux/software/safecat.html
