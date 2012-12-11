@@ -1,0 +1,44 @@
+WHAT IS THIS?
+--------------
+
+* man safecat
+
+SCENARIO/POSSIBLE USAGE
+-----------------------
+
+* mbox2maildir converter
+
+I tried to import plain mbox files to the Maildir style using kmail kmailcvt
+from KDE 3.2.3 but it choked on me..., so I had to find something rock solid.
+
+safecat + procmail was the answer, not anyone of those magic perl scripts
+that just didn't work, I tried them all.
+
+This is basically how I did to "import" the asterisk-dev mailinglists after 
+reading and interesting onliner here:
+
+http://www.pobox.com/~lbudney/linux/software/safecat/one-liners.html
+
+
+-------- [ rough shell code snippet, begin ] ------------
+#!/bin/sh
+cd /to/where/you/want/it
+
+wget `lynx -dump http://lists.digium.com/pipermail/asterisk-dev/ | grep gz | awk '{ print $2}'`
+gunzip *.gz
+
+for i in *.txt; do
+    d_name=`echo $i| sed 's/\.txt//'`
+    maildirmake++ .softwares.asterisk-dev.${d_name}
+    formail -I'From ' -s maildir .softwares.asterisk-dev.${d_name} < ${i}
+    chown -R vpopmail:vchkpw .softwares.asterisk-dev.${d_name}
+    # subscribe too?
+    #echo ".softwares.asterisk-dev.${d_name}" >> courierimapsubscribed
+    rm -f $i
+done
+
+-------- [ rough shell code snippet, end ] ------------
+
+(I use vpopmail...)
+
+Regards // Oden Eriksson

@@ -61,3 +61,43 @@ rm -rf %{buildroot}
 %{_bindir}/maildir
 %{_mandir}/man1/safecat.1*
 %{_mandir}/man1/maildir.1*
+
+
+%changelog
+* Tue Sep 08 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.13-4mdv2010.0
++ Revision: 433600
+- rebuild
+
+* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.13-3mdv2009.0
++ Revision: 269239
+- rebuild early 2009.0 package (before pixel changes)
+
+* Tue Jun 10 2008 Oden Eriksson <oeriksson@mandriva.com> 1.13-2mdv2009.0
++ Revision: 217545
+- rebuilt against dietlibc-devel-0.32
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.13-1mdv2008.1
++ Revision: 140755
+- restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Jan 26 2007 Oden Eriksson <oeriksson@mandriva.com> 1.13-1mdv2007.0
++ Revision: 113789
+- Import safecat
+
+* Fri Jan 26 2007 Oden Eriksson <oeriksson@mandriva.com> 1.13-1mdv2007.1
+- 1.13
+
+* Sun Dec 25 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.12-3mdk
+- Fix BuildRequires
+- use mkrel
+
+* Sun Dec 25 2005 Oden Eriksson <oeriksson@mandriva.com> 1.12-2mdk
+- rebuild
+
+* Thu Nov 04 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 1.12-1mdk
+- initial mandrake package
+
