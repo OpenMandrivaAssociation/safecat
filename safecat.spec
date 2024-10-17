@@ -7,7 +7,7 @@ Version:	1.13
 Release:	5
 License:	BSD
 Group:		File tools
-URL:		http://jeenyus.net/~budney/linux/software/safecat.html
+URL:		https://jeenyus.net/~budney/linux/software/safecat.html
 Source0:	http://jeenyus.net/~budney/linux/software/safecat/%{name}-%{version}.tar.bz2
 Source1:	README.MDK
 BuildRequires:	dietlibc-devel >= 0.20
