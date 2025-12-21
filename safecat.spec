@@ -10,6 +10,7 @@ Group:		File tools
 URL:		https://jeenyus.net/~budney/linux/software/safecat.html
 Source0:	http://jeenyus.net/~budney/linux/software/safecat/%{name}-%{version}.tar.bz2
 Source1:	README.MDK
+BuildRequires:	make
 BuildRequires:	dietlibc-devel >= 0.20
 BuildRequires:  groff-for-man
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
